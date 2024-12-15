@@ -2,6 +2,7 @@ import "./Main.css";
 import { GiHamburgerMenu } from "react-icons/gi";
 import Sidebar from "./Sidebar";
 import { useState } from "react";
+import Feed from "../Feed";
 
 function Main() {
   const [sidebarShow, setSidebarShow] = useState(false);
@@ -15,7 +16,9 @@ function Main() {
         <div className="top-row" onClick={() => setSidebarShow(!sidebarShow)}>
           <GiHamburgerMenu />
         </div>
-        <div>HERE WILL BE RENDERED FULL COMPONENT</div>
+        <div>
+          <Feed/>
+        </div>
       </div>
       <div className="chat">CHAT COMPONENT</div>
     </div>
