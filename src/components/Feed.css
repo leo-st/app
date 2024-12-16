@@ -1,0 +1,23 @@
+
+h1 {
+    text-align: left;
+}
+
+h1:hover {
+    color: cornflowerblue;
+}
+
+ul {
+    display: flex; /* Use flexbox for horizontal alignment */
+    gap: 15px; /* Add space between cards */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    list-style: none; /* Remove bullet points from list */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    scroll-snap-type: x mandatory; /* Smooth scrolling experience */
+}
+
+li {
+    flex: 0 0 auto; /* Prevent cards from shrinking or stretching */
+    scroll-snap-align: start; /* Align items neatly on scroll */
+}
