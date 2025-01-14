@@ -1,3 +1,13 @@
+/* General styles for Feed */
+.feed {
+    flex: 1;
+    position: relative; /* Ensures child elements can use absolute positioning relative to this container */
+    overflow-y: auto; /* Makes feed content scrollable */
+    background-color: #ffffff;
+    padding: 20px;
+    height: 100%; /* Ensures it takes the full available height */
+    flex-grow: 1; /* Ensures it expands to fill available space */
+}
 
 h1 {
     text-align: left;
@@ -20,4 +30,52 @@ ul {
 li {
     flex: 0 0 auto; /* Prevent cards from shrinking or stretching */
     scroll-snap-align: start; /* Align items neatly on scroll */
+}
+
+/* Styles for Floating Overlay */
+.floating-overlay {
+    position: fixed; /* Keeps it fixed within the viewport */
+    bottom: 2%; /* Aligns it to the bottom of the viewport */
+    right: 32%; /* Aligns it to the left of the viewport */
+    width: 30%; /* Sets the width to 50% of the feed */
+    height: 45%; /* Reduced height */
+    padding: 10px; /* Reduced padding */
+    font-size: 14px; /* Adjusted font size for smaller content */
+    background-color: gray; /* Background color */
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 10px 10px 0 0; /* Rounded top corners */
+    z-index: 100; /* Ensures it's above other feed content */
+}
+
+/* Content inside the floating overlay */
+.overlay-content {
+    text-align: center;
+}
+
+/* Button inside the overlay */
+.overlay-content button {
+    margin-top: 5px; /* Reduced margin */
+    padding: 5px 10px; /* Adjusted button size */
+}
+
+.overlay-content button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Reopen button when overlay is closed */
+.reopen-button {
+    position: fixed; /* Keeps the reopen button fixed within the viewport */
+    bottom: 0; /* Positions it at the bottom of the viewport */
+    left: 0; /* Aligns it to the left of the viewport */
+    padding: 10px 20px;
+    background-color: #007bff; /* Primary button color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 100; /* Ensure it stays above other content */
+}
+
+.reopen-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
 }

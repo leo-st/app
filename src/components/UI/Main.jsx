@@ -3,6 +3,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import Sidebar from "./Sidebar";
 import { useState } from "react";
 import Feed from "../Feed";
+import Chat from "./Chat";
 
 function Main() {
   const [sidebarShow, setSidebarShow] = useState(false);
@@ -16,11 +17,13 @@ function Main() {
         <div className="top-row" onClick={() => setSidebarShow(!sidebarShow)}>
           <GiHamburgerMenu />
         </div>
-        <div>
+        <div className="feed-wrapper">
           <Feed/>
         </div>
       </div>
-      <div className="chat">CHAT COMPONENT</div>
+      <div className="chat">
+        <Chat />
+      </div>
     </div>
   );
 }
