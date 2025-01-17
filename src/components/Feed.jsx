@@ -1,9 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Feed.css";
 import SportCard from "./SportCard";
+import ChatBox from "./ChatBox";
+function Feed({friendChat}) {
+  console.log("feed rendered");
+  console.log(friendChat);
+  const [showOverlay, setShowOverlay] = useState(friendChat ? true : false );
 
-function Feed() {
-  const [showOverlay, setShowOverlay] = useState(true);
+  function hideChatBox(){
+    setShowOverlay(false);
+  }
+
+  useEffect(() => {
+    setShowOverlay(friendChat ? true : false);
+  }, [friendChat]); // Run whenever `friendChat` changes
 
   return (
     <div className="feed">
@@ -18,13 +28,7 @@ function Feed() {
       </ul>
 
       {showOverlay && (
-        <div className="floating-overlay">
-          <div className="overlay-content">
-            <h3>Chatbox</h3>
-            <p>This overlay stays on screen and doesn't block interaction.</p>
-            <button onClick={() => setShowOverlay(false)}>Close</button>
-          </div>
-        </div>
+        <ChatBox onShowOverlay={hideChatBox} friend={friendChat}/>
       )}
 
       {!showOverlay && (

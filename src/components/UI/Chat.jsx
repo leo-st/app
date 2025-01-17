@@ -9,25 +9,26 @@ const friends = [
     { name: 'Charlie', status: 'online' },
   ];
 
-function Chat() {
+  function Chat({ selectedFriendInChat }) {
     const [friendsList, setFriendList] = useState(friends);
 
-    // filter friend list by text input
-    function filterFriendsBySearch(text){
-      setFriendList(friends.filter(
-        friend => friend.name.toLocaleLowerCase().includes(text.toLowerCase())
-      )); 
+    function handleSelectedFriend(name) {
+        selectedFriendInChat(name); // Pass the name up
     }
-  
+
     return (
-      <div className="chat-container">
-        <div className="search-box-wrapper">
-          <SearchBox onSearch={filterFriendsBySearch}/>
+        <div className="chat-container">
+            <div className="search-box-wrapper">
+                <SearchBox onSearch={(text) => {
+                    setFriendList(friends.filter(
+                        friend => friend.name.toLowerCase().includes(text.toLowerCase())
+                    ));
+                }} />
+            </div>
+            <h2>Friends</h2>
+            <FriendList friends={friendsList} selectFriend={handleSelectedFriend} />
         </div>
-        <h2>Friends</h2>
-        <FriendList friends={friendsList} />
-      </div>
     );
-  }
+}
 
 export default Chat;

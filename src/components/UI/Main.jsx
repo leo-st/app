@@ -7,6 +7,11 @@ import Chat from "./Chat";
 
 function Main() {
   const [sidebarShow, setSidebarShow] = useState(false);
+  const [friendChat, setFriendChat] = useState(undefined); //for now we work with strings, later will be id's
+  
+  function handleSelectedFriend(name){
+    setFriendChat(name);
+  }
 
   return (
     <div className="main">
@@ -18,11 +23,11 @@ function Main() {
           <GiHamburgerMenu />
         </div>
         <div className="feed-wrapper">
-          <Feed/>
+          <Feed friendChat={friendChat}/>
         </div>
       </div>
       <div className="chat">
-        <Chat />
+        <Chat selectedFriendInChat={handleSelectedFriend}/>
       </div>
     </div>
   );
