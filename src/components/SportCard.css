@@ -19,8 +19,8 @@
 }
 
 .card img {
-    width: 80px; /* Responsive image */
-    height: auto; /* Maintain aspect ratio */
+    width: 100px; /* Responsive image */
+    height: 100px; /* Maintain aspect ratio */
     border-radius: 10px; /* Rounded image corners */
     opacity: 0.8; /* Transparency */
     transition: opacity 0.3s; /* Smooth opacity change */

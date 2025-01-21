@@ -51,3 +51,29 @@ li {
 .reopen-button:hover {
     background-color: #0056b3; /* Darker shade on hover */
 }
+
+.sport-card-container {
+    display: flex; /* Enables flexbox */
+    justify-content: center; /* Centers items horizontally */
+    align-items: center; /* Centers items vertically */
+    flex-direction: column; /* Stacks items vertically (optional if needed) */
+  }
+
+  .list-categories-container {
+    display: flex; /* Allows for horizontal alignment */
+    justify-content: flex-end; /* Moves the button to the right */
+    padding: 1rem; /* Adds some spacing around the container */
+  }
+  
+  .categories-button {
+    background: none; /* Removes default button styling */
+    border: none; /* Removes border */
+    color: #4d4d4d; /* Between grey and black */
+    font-size: 1rem; /* Adjust font size */
+    text-decoration: underline; /* Underlines the text */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+  }
+  
+  .categories-button:hover {
+    color: blue; /* Changes text color to blue on hover */
+  }
