@@ -2,7 +2,7 @@ import "./Main.css";
 import { GiHamburgerMenu } from "react-icons/gi";
 import Sidebar from "./Sidebar";
 import { useState } from "react";
-import Feed from "../Feed";
+import Feed from "../feed/Feed";
 import Chat from "./Chat";
 
 function Main() {

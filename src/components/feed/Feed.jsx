@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./Feed.css";
-import SportCard from "./SportCard";
-import ChatBox from "./ChatBox";
+import SportCard from "../SportCard";
+import ChatBox from "../ChatBox";
+import FeedList from "./FeedList";
 function Feed({ friendChat }) {
   console.log("feed rendered");
   console.log(friendChat);
@@ -42,6 +43,7 @@ function Feed({ friendChat }) {
           </ul>
         </div>
       </div>
+      <FeedList />
 
       {showOverlay && (
         <ChatBox onShowOverlay={hideChatBox} friend={friendChat} />
